@@ -13,8 +13,9 @@ function App() {
     // console.log(item)
     //  cart.push(item)
     //  console.log(cart)
-    if(cart.indexOf(item) !==-1) return alert("item already added")
-   setCart([...cart,item])
+    let checkCart=cart.find((i)=>i.id === item.id)
+    if(checkCart) {alert ("Item is already in cart")}
+   else {setCart([...cart,item])}
  }
  return (
     <div className="App">
@@ -23,7 +24,7 @@ function App() {
     {/* {show? <Dishes handleClick={handleClick}/> :<SelectedDishes cart={cart} setCart={setCart} />}  */}
     <Routes>
     <Route path="/login" element={<Login/>}>Login</Route>
-     <Route path="/dishes" element={<Dishes handleClick={handleClick}/> }></Route>
+     <Route path="/dishes" element={<Dishes handleClick={handleClick} cart={cart}/> }></Route>
      <Route path="/selectedDishes" element={<SelectedDishes cart={cart} setCart={setCart}/>}/>
       <Route path="/" element={<Login/>}>Login</Route>
       </Routes>

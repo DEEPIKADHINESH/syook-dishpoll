@@ -17,9 +17,11 @@ const Dishes=({handleClick})=>{
         }
 fetchData()
     },[])
+   
     return(
+       
 <div>
-      <div className="py-4 container">
+    <div className="py-4 container">
                     <div className="col-md-12 ">
                         <div className="row ">
                             {data.map((datas) => (
