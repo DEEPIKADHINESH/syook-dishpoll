@@ -14,7 +14,8 @@ function App() {
     //  cart.push(item)
     //  console.log(cart)
     let checkCart=cart.find((i)=>i.id === item.id)
-    if(checkCart) {alert ("Item is already in cart")}
+    if(checkCart ) {alert ("Item is already in cart")}
+    else if(cart.length>=3) {alert("Maximum 3 items allowed")}
    else {setCart([...cart,item])}
  }
  return (
