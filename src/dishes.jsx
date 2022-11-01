@@ -1,8 +1,11 @@
 import axios from "axios";
 import React,{useEffect,useState}from "react";
+import Dropdown from "./dropDown";
+import SelectedDishes from "./selectedDishes";
+
 const Dishes=({handleClick})=>{
     const[data,setData]=useState([])
-    useEffect(()=>{
+   useEffect(()=>{
         const url="https://raw.githubusercontent.com/syook/react-dishpoll/main/db.json"
         const fetchData=async()=>{
             try{
@@ -10,17 +13,14 @@ const Dishes=({handleClick})=>{
                .then(response=>{
                    setData(response.data)
                 })
-               
-            }
+               }
             catch(error)
             {console.log(error)}
         }
 fetchData()
     },[])
-   
-    return(
-       
-<div>
+return(
+    <div>
     <div className="py-4 container">
                     <div className="col-md-12 ">
                         <div className="row ">
@@ -31,8 +31,10 @@ fetchData()
                                         <div className="card-body">
                                             <h5 className="card-title">{datas.dishName}</h5>
                                             <p className="card-text">{datas.description}</p>
-                                           <button onClick={()=>handleClick(datas)}>Click to Add</button> 
+                                           <button className="btn btn-primary" onClick={()=>handleClick(datas)}>Click to Add</button> 
+                                            
                                           </div>
+                                          
                                     </div>
                                 </div>
                             ))}

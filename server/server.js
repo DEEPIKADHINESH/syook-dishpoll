@@ -29,8 +29,12 @@ let user=[
       "password": "paul123"
     }
   ]
-app.use("/login",(req,res)=>
-    res.send(user)
+app.get("/login",(req,res)=>{
+  const login=user.find(c=>c.username===(req.params.username))
+  if(!login) return ("error")
+  res.send(login)
+}
+   
 )
 app.listen(8080,()=>{
     console.log("Server started running")

@@ -9,6 +9,7 @@ import Navbar from './navbar';
 function App() {
  const [show,setShow]=useState([false])
  const[cart,setCart]=useState([])
+
  const handleClick=(item)=>{
     // console.log(item)
     //  cart.push(item)
@@ -18,16 +19,18 @@ function App() {
     else if(cart.length>=3) {alert("Maximum 3 items allowed")}
    else {setCart([...cart,item])}
  }
+
+
  return (
     <div className="App">
     <Router>
     <Navbar setShow={setShow}/>
     {/* {show? <Dishes handleClick={handleClick}/> :<SelectedDishes cart={cart} setCart={setCart} />}  */}
     <Routes>
-    <Route path="/login" element={<Login/>}>Login</Route>
+    <Route path="/login" element={<Login />}>Login</Route>
      <Route path="/dishes" element={<Dishes handleClick={handleClick} cart={cart}/> }></Route>
      <Route path="/selectedDishes" element={<SelectedDishes cart={cart} setCart={setCart}/>}/>
-      <Route path="/" element={<Login/>}>Login</Route>
+      <Route path="/" element={<Login />}>Login</Route>
       </Routes>
       </Router>
   </div>
