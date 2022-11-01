@@ -11,9 +11,7 @@ function App() {
  const[cart,setCart]=useState([])
 
  const handleClick=(item)=>{
-    // console.log(item)
-    //  cart.push(item)
-    //  console.log(cart)
+    
     let checkCart=cart.find((i)=>i.id === item.id)
     if(checkCart ) {alert ("Item is already in cart")}
     else if(cart.length>=3) {alert("Maximum 3 items allowed")}

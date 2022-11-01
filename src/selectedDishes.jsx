@@ -3,23 +3,7 @@ import React,{useState} from 'react';
 import Dropdown from './dropDown';
 
 const SelectedDishes=({cart,setCart})=>{
-      const[order,setOrder]=useState("asc")
-      const sorting=(col)=>{
-        if(order==="asc"){
-            const sorted=[...cart].sort((a,b)=>
-            a[col].toLowerCase()>b[col].toLowerCase()?1:-1)
-            setCart(sorted)
-            setOrder("dsc")
-        }
-        if(order==="dsc"){
-            const sorted=[...cart].sort((a,b)=>
-            a[col].toLowerCase()<b[col].toLowerCase()?1:-1)
-            setCart(sorted)
-            setOrder("asc")
-        }
-        
-        
-      }
+   
 const handleRemove=(id)=>{
     const arr=cart.filter((item)=>item.id!==id)
     setCart(arr)

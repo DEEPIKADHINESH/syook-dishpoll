@@ -1,7 +1,6 @@
 import axios from "axios";
 import React,{useEffect,useState}from "react";
-import Dropdown from "./dropDown";
-import SelectedDishes from "./selectedDishes";
+
 
 const Dishes=({handleClick})=>{
     const[data,setData]=useState([])
@@ -19,7 +18,9 @@ const Dishes=({handleClick})=>{
         }
 fetchData()
     },[])
+   
 return(
+
     <div>
     <div className="py-4 container">
                     <div className="col-md-12 ">
@@ -31,7 +32,7 @@ return(
                                         <div className="card-body">
                                             <h5 className="card-title">{datas.dishName}</h5>
                                             <p className="card-text">{datas.description}</p>
-                                           <button className="btn btn-primary" onClick={()=>handleClick(datas)}>Click to Add</button> 
+                                        <button className="btn btn-primary hover" onClick={()=>handleClick(datas)}>Add Items to Rank</button> 
                                             
                                           </div>
                                           
