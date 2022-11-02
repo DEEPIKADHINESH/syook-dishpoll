@@ -5,25 +5,20 @@ import React,{useState} from 'react';
 import Dishes from './dishes';
 import SelectedDishes from './selectedDishes';
 import Navbar from './navbar';
-
 function App() {
- const [show,setShow]=useState([false])
- const[cart,setCart]=useState([])
 
- const handleClick=(item)=>{
-    
+ const[cart,setCart]=useState([])
+const handleClick=(item)=>{
     let checkCart=cart.find((i)=>i.id === item.id)
-    if(checkCart ) {alert ("Item is already in cart")}
-    else if(cart.length>=3) {alert("Maximum 3 items allowed")}
+    if(checkCart ) {alert ("Item is already in rank page")}
+    else if(cart.length>=3) {alert("Maximum 3 items allowed to rank")}
    else {setCart([...cart,item])}
  }
-
-
- return (
+ 
+return (
     <div className="App">
     <Router>
-    <Navbar setShow={setShow}/>
-    {/* {show? <Dishes handleClick={handleClick}/> :<SelectedDishes cart={cart} setCart={setCart} />}  */}
+    <Navbar />
     <Routes>
     <Route path="/login" element={<Login />}>Login</Route>
      <Route path="/dishes" element={<Dishes handleClick={handleClick} cart={cart}/> }></Route>

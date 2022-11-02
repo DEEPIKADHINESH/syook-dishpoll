@@ -29,10 +29,8 @@ function Dropdown(){
     return(
         <div >
             <Select  options={dropdownlist} onChange={ddlHandler} className="scroll" />
-           
-             <h1>{result}</h1>
-            
-        </div>
+            <h1>{result}</h1>
+            </div>
     )
 }
 export default Dropdown

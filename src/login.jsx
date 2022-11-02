@@ -18,9 +18,9 @@ function Login() {
   const[message,setMessage]=useState("")
 const loginbutton=()=>{
   if(email===""||email===null){
-    setMessage("please fill username")
+    setMessage("Please fill Username")
   }else if(password===""||password===null){
-    setMessage("please fill password")
+    setMessage("Please fill Password")
   }else if (email===usernameTmp && password===passwordTmp){
     navigate("/dishes")
   }
@@ -37,11 +37,11 @@ const loginbutton=()=>{
     navigate("/dishes")
   }
   else{
-    setMessage("username or password is incorrect")
+    setMessage("Username or Password is incorrect")
   }
 }
 return (
-            <div>
+            <div id="loginForm">
               <div className='loginPage'>
                <div className='form-group'>
                 <label htmlFor='text' className='form-label'>Enter Username</label>
@@ -56,59 +56,11 @@ return (
     onChange={e=>setPassword(e.target.value)}
     name="password" id="password" placeholder="Password"></input>
   </div>
-  {   message !==""&&   <div style={{color:"red",marginTop:10,height:30}}>{message}</div>}
-  <button  className='btn btn-warning' onClick={loginbutton} >LOGIN</button>
+  {message !==""&&   <h3 style={{color:"red",marginTop:10,height:30}}>{message}</h3>}
+  <button  className='btn btn-primary' onClick={loginbutton} >LOGIN</button>
               </div>
             </div>
-  
-//             <div>
-//               <div className='loginPage'>
-//                <div className='form-group'>
-//                 <label htmlFor='text' className='form-label'>Enter email address</label>
-          
-//                 <input type="email" className='form-control' 
-//                  onChange={(e) => setValues({ ...values, username: e.target.value})} 
-//                 id="email" placeholder='Enter email address'></input>
-//                 </div>
-//                <div className="form-group">
-//     <label htmlFor="password"   className='form-label'>Password</label>
-//     <input type="password" className="form-control" 
-//     onChange={(e) => setValues({ ...values, password: e.target.value })}
-//     name="password" id="password" placeholder="Password"></input>
-//   </div>
- 
-//   <button  className='btn btn-warning' onClick={handleSubmit} >LoGIN</button>
-//               </div>
-//             </div>
-  
-//         );
-// return (
-//   <div>
-//     <h1>Login Account</h1>
-//     <form onSubmit={handleSubmit}>
-//       <label htmlFor="email">
-//         Email
-//         <input
-//           type="email"
-//           name="email"
-//           value={data.email}
-//           onChange={handleChange}
-//         />
-//       </label>
-//       <label htmlFor="password">
-//         Password
-//         <input
-//           type="password"
-//           name="password"
-//           value={data.password}
-//           onChange={handleChange}
-//         />
-//       </label>
-//       <button type="submit">Login</button>
-//     </form>
-//   </div>
-// );
- )
+)
 };
     
 

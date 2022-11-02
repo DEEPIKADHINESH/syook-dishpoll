@@ -1,5 +1,6 @@
 .loginPage{
     margin:20vh 20vw 50px 20px;
+    
 }
 .form-control{
     padding:10px;
@@ -10,5 +11,5 @@
     font-weight: bold;
 }
 button{
-    float:left
+    float:center
 }

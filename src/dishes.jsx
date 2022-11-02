@@ -1,9 +1,8 @@
 import axios from "axios";
 import React,{useEffect,useState}from "react";
-
-
-const Dishes=({handleClick})=>{
+const Dishes=({handleClick,cart})=>{
     const[data,setData]=useState([])
+    const[value,setValue]=useState("Add to image to Rank")
    useEffect(()=>{
         const url="https://raw.githubusercontent.com/syook/react-dishpoll/main/db.json"
         const fetchData=async()=>{
@@ -18,22 +17,23 @@ const Dishes=({handleClick})=>{
         }
 fetchData()
     },[])
-   
-return(
+  
 
+return(
     <div>
     <div className="py-4 container">
                     <div className="col-md-12 ">
-                        <div className="row ">
+                        <div className="row  ">
                             {data.map((datas) => (
                                 <div className="col-md-4 mb-4 " key={datas.id}>
-                                    <div className="card h-100" >
-                                        <img src={datas.image} className="card-img-top" alt="..." />
+                                    <div className="card h-100 text-center" >
+                                       <img src={datas.image} className="card-img-top" alt="..." />
                                         <div className="card-body">
                                             <h5 className="card-title">{datas.dishName}</h5>
                                             <p className="card-text">{datas.description}</p>
-                                        <button className="btn btn-primary hover" onClick={()=>handleClick(datas)}>Add Items to Rank</button> 
-                                            
+                                           <button className="btn btn-primary hover" 
+                                           onClick={()=>{handleClick(datas)}}>{value}</button>   
+                                             
                                           </div>
                                           
                                     </div>
