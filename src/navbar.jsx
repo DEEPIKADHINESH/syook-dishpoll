@@ -5,7 +5,7 @@ const Navbar=()=>{
      <nav className="navbar navbar-light bg-warning " >
         <NavLink className="navbar-brand" to="/dishes">All Dishes</NavLink>
         <NavLink className="navbar-brand"  to="/selecteddishes" >Selected Dishes</NavLink>
-        <NavLink className="navbar-brand"  to="/login">Selected Dishes</NavLink>
+        <NavLink className="navbar-brand"  to="/login">Login</NavLink>
         
   </nav>
     )
