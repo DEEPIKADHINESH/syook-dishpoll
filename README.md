@@ -1,1 +1,2 @@
 # syook-dishpoll
+Here the landing page is login only the authorised users can able to login.When the authorised user clicks on login button it will take to product details page.In that can able to see products present and can able to add upto 3 products in the nextpage.If the user tries to add more than 3 projects  and if the same product is added twice alert popup will show.In the next page the user can able to rank the dishes.
